@@ -22,21 +22,32 @@ namespace Learm_1                   //Program name space
             */
 
             //cteate a random array
-            int[] array = new int[100];
+            int[] r_array = new int[100];
             Random rnd = new Random();
-            for(int i=0;i<array.Length;i++)
+            for(int i=0;i<r_array.Length;i++)
             {
-                array[i] = rnd.Next(101);
+                r_array[i] = rnd.Next(101);
             }
             Console.WriteLine("Generated array:");
-            PrintArray(array);
+            PrintArray(r_array);
 
-            DateTime start = DateTime.Now;
-            array = SelectionSort(array);
-            TimeSpan time = DateTime.Now - start;
+            int[] array1 = new int[r_array.Length];
+            Array.Copy(r_array,array1,r_array.Length);
+            DateTime start_time = DateTime.Now;
+            array1 = SelectionSort(array1);
+            TimeSpan time = DateTime.Now - start_time;
             Console.WriteLine($"Selection sorting, time({time}):"); 
-            PrintArray(array);
-            
+            PrintArray(array1);
+
+            int[] array2 = new int[r_array.Length];
+            Array.Copy(r_array, array2, r_array.Length);
+            start_time = DateTime.Now;
+            array2 = InsertionSort(array2);
+            time = DateTime.Now - start_time;
+            PrintArray(r_array);
+            Console.WriteLine($"Incertion sorting, time({time}):");
+            PrintArray(array2);
+
 
             Console.ReadKey();
         }
@@ -48,9 +59,8 @@ namespace Learm_1                   //Program name space
             }
             Console.WriteLine();
         }
+        
         //Sorting algoritms
-
-        //Selection sort
         static int[] SelectionSort(int[] array)
         {
             int start = 0;
@@ -73,6 +83,27 @@ namespace Learm_1                   //Program name space
                 array[temp_index] = temp;
                 array[start] = min;
                 start += 1;
+            }
+            return array;
+        }
+
+        static int[] InsertionSort(int[] array)
+        {
+            bool done = false;
+            int temp;
+            while(!done)
+            {
+                done = true;
+                for(int i=0;i<array.Length-1;i++)
+                {
+                    if (array[i+1]<array[i])
+                    {
+                        temp = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = temp;
+                        done = false;
+                    }
+                }
             }
             return array;
         }
