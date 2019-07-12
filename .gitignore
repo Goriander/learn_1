@@ -97,6 +97,11 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+#non-authomatic files
+*.ide
+*.ide-shm
+*.ide-wal 
+
 # Chutzpah Test files
 _Chutzpah*
 
