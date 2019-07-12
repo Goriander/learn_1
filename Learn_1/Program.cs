@@ -34,7 +34,7 @@ namespace Learm_1                   //Program name space
             array2 = InsertionSort(array2);
             time = DateTime.Now - start_time;
             PrintArray(r_array);
-            Console.WriteLine($"Incertion sorting, time({time}):");
+            Console.WriteLine($"Bubble sorting, time({time}):");
             PrintArray(array2);
 
 
@@ -76,7 +76,7 @@ namespace Learm_1                   //Program name space
             return array;
         }
 
-        static int[] InsertionSort(int[] array)
+        static int[] BubleSort(int[] array)
         {
             bool done = false;
             int temp;
@@ -95,6 +95,23 @@ namespace Learm_1                   //Program name space
                 }
             }
             return array;
+        }
+
+        static int[] InsertionSort(int[] r_array)
+        {
+            int[] s_array = new int[r_array.Length];
+            for(int i=0;i<r_array.Length;i++)
+            {
+                for(int j=i;j>=0;j--)
+                {
+                    if (r_array[i]<s_array[j])
+                    {
+                        s_array[j + 1];
+                    }
+                }
+            }
+
+            return s_array;
         }
     }
 }
