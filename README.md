@@ -1,7 +1,7 @@
 # learn_1
 My first program in C# 
 
-In this program i`am testing sorting and searching algorithms.
+In this program im testing sorting and searching algorithms.
 
 Sorting algorithms:
 
