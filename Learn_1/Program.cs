@@ -34,6 +34,34 @@ namespace Learm_1                   //Program name space
 
         //Sorting algoritms
 
-        //
+        //Selection sort
+        static int[] SelectionSort(int[] array)
+        {
+            int start = 0;
+            int end = array.Length;
+            bool done = false;
+
+            while (!done)
+            {
+                done = true;
+                int min = 32767;
+                int temp = 0;
+                int temp_index = 0;
+                for (int i=start;i<end;i++)
+                {
+                    if (array[i]<min)
+                    {
+                        min = array[i];
+                        temp_index = i;
+                        done = false;
+                    }   
+                }
+                temp = array[start];
+                array[temp_index] = temp;
+                array[start] = min;
+                start += 1;
+            }
+            return array;
+        }
     }
 }
