@@ -4,3 +4,4 @@ C:\Users\Олег\source\repos\Learn_1\Learn_1\bin\Debug\Learn_1.pdb
 C:\Users\Олег\source\repos\Learn_1\Learn_1\obj\Debug\Learn_1.csproj.CoreCompileInputs.cache
 C:\Users\Олег\source\repos\Learn_1\Learn_1\obj\Debug\Learn_1.exe
 C:\Users\Олег\source\repos\Learn_1\Learn_1\obj\Debug\Learn_1.pdb
+C:\Users\Олег\source\repos\Learn_1\Learn_1\obj\Debug\Learn_1.csprojAssemblyReference.cache
