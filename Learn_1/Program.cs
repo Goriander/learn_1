@@ -24,16 +24,57 @@ namespace Learm_1                   //Program name space
             //cteate a random array
             int[] array = new int[100];
             Random rnd = new Random();
-            foreach (int i in array)
+            for(int i=0;i<array.Length;i++)
             {
                 array[i] = rnd.Next(101);
             }
+            Console.WriteLine("Generated array:");
+            PrintArray(array);
+
+            DateTime start = DateTime.Now;
+            array = SelectionSort(array);
+            TimeSpan time = DateTime.Now - start;
+            Console.WriteLine($"Selection sorting, time({time}):"); 
+            PrintArray(array);
+            
 
             Console.ReadKey();
         }
-
+        static void PrintArray(int[] array)
+        {
+            for(int i=0;i<array.Length;i++)
+            {
+                Console.Write($"[{array[i]}] ");
+            }
+            Console.WriteLine();
+        }
         //Sorting algoritms
 
-        //
+        //Selection sort
+        static int[] SelectionSort(int[] array)
+        {
+            int start = 0;
+            int end = array.Length;
+
+            for(int i=0;i<end;i++)
+            {
+                int min = 32767;
+                int temp = 0;
+                int temp_index = 0;
+                for (int j=start;j<end;j++)
+                {
+                    if (array[j]<min)
+                    {
+                        min = array[j];
+                        temp_index = j;
+                    }   
+                }
+                temp = array[start];
+                array[temp_index] = temp;
+                array[start] = min;
+                start += 1;
+            }
+            return array;
+        }
     }
 }
