@@ -98,9 +98,9 @@ StyleCopReport.xml
 *.scc
 
 #non-authomatic files
-*.ide
-*.ide-shm
-*.ide-wal 
+storage.ide
+storage.ide-shm
+storage.ide-wal
 
 # Chutzpah Test files
 _Chutzpah*
